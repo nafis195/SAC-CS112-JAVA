@@ -1,0 +1,366 @@
+
+2	+import java.util.Scanner;
+3	+import javax.swing.JOptionPane;
+4	+
+5	+public class April1
+6	+{
+7	+	public static void main (String args[])
+8	+	{
+9	+		Scanner input = new Scanner(System.in);
+10	+		
+11	+		boolean GameDone = true;
+12	+		boolean InvalidMove = true;
+13	+		String Board = "";
+14	+		
+15	+		String  Box1 = "1",
+16	+				Box2 = "2",
+17	+				Box3 = "3",
+18	+				Box4 = "4",
+19	+				Box5 = "5",
+20	+				Box6 = "6",
+21	+				Box7 = "7",
+22	+				Box8 = "8",
+23	+				Box9 = "9";
+24	+		
+25	+		String User;
+26	+		int ComputerChoice;
+27	+		int TieGame = 0;
+28	+		
+29	+	GameDone = true;
+30	+	do
+31	+	{
+32	+		InvalidMove = true;
+33	+			do{
+34	+			
+35	+				Board = Box1 + " | " + Box2 + " | " +  Box3 + "\n";
+36	+				Board = Board + "---|---|---" + "\n";
+37	+				Board = Board + Box4 + " | " + Box5 + " | " +  Box6 + "\n";
+38	+				Board = Board + "---|---|---" + "\n";
+39	+				Board = Board +  Box7 + " | " +  Box8 + " | " +  Box9 + "\n";
+40	+				Board  = Board + "Enter a Number 1-9";
+41	+				User = JOptionPane.showInputDialog(Board);
+42	+				
+43	+				
+44	+				//  User Moves //
+45	+				 if(User.equalsIgnoreCase("1"))
+46	+					{
+47	+						if ( ! Box1.equals("1"))
+48	+							{
+49	+								JOptionPane.showMessageDialog(null,"Box Already Taken");
+50	+							}
+51	+						else 
+52	+							{
+53	+								Box1="X";
+54	+								InvalidMove = false;
+55	+							}
+56	+					}
+57	+				else if(User.equalsIgnoreCase("2"))
+58	+					{
+59	+						if ( ! Box2.equals("2"))
+60	+							{
+61	+								JOptionPane.showMessageDialog(null,"Box Already Taken");
+62	+							}
+63	+						else 
+64	+							{
+65	+								Box2="X";
+66	+								InvalidMove = false;
+67	+							}	
+68	+					}
+69	+				else if(User.equalsIgnoreCase("3"))
+70	+					{
+71	+						if ( ! Box3.equals("3"))
+72	+							{
+73	+								JOptionPane.showMessageDialog(null,"Box Already Taken");
+74	+							}
+75	+						else 
+76	+							{
+77	+								Box3="X";
+78	+								InvalidMove = false;
+79	+							}
+80	+					}
+81	+				else if(User.equalsIgnoreCase("4"))
+82	+					{
+83	+						if ( ! Box4.equals("4"))
+84	+							{
+85	+								JOptionPane.showMessageDialog(null,"Box Already Taken");
+86	+							}
+87	+						else 
+88	+							{
+89	+								Box4="X";
+90	+								InvalidMove = false;
+91	+							}
+92	+					}
+93	+				else if(User.equalsIgnoreCase("5"))
+94	+					{
+95	+						if ( ! Box5.equals("5"))
+96	+							{
+97	+								JOptionPane.showMessageDialog(null,"Box Already Taken");
+98	+							}
+99	+						else 
+100	+							{
+101	+								Box5="X";
+102	+								InvalidMove = false;
+103	+							}
+104	+					}
+105	+				else if(User.equalsIgnoreCase("6"))
+106	+					{
+107	+						if ( ! Box6.equals("6"))
+108	+							{
+109	+								JOptionPane.showMessageDialog(null,"Box Already Taken");
+110	+							}
+111	+						else 
+112	+							{
+113	+								Box6="X";
+114	+								InvalidMove = false;
+115	+							}
+116	+					}
+117	+				else if(User.equalsIgnoreCase("7"))
+118	+					{
+119	+						if ( ! Box7.equals("7"))
+120	+							{
+121	+								JOptionPane.showMessageDialog(null,"Box Already Taken");
+122	+							}
+123	+						else 
+124	+							{
+125	+								Box7="X";
+126	+								InvalidMove = false;
+127	+							}	
+128	+					}
+129	+				else if(User.equalsIgnoreCase("8"))
+130	+					{
+131	+						if ( ! Box8.equals("8"))
+132	+							{
+133	+								JOptionPane.showMessageDialog(null,"Box Already Taken");
+134	+							}
+135	+						else 
+136	+							{
+137	+								Box8="X";
+138	+								InvalidMove = false;
+139	+							}	
+140	+					}
+141	+				else if(User.equalsIgnoreCase("9"))
+142	+					{
+143	+						if ( ! Box9.equals("9"))
+144	+							{
+145	+								JOptionPane.showMessageDialog(null,"Box Already Taken");
+146	+							}
+147	+						else 
+148	+							{
+149	+								Box9="X";
+150	+								InvalidMove = false;
+151	+							}
+152	+					}
+153	+
+154	+			}while (InvalidMove);
+155	+		
+156	+		// Computer Move // 
+157	+		do{
+158	+			ComputerChoice = 1 + (int) (Math.random() * 9);
+159	+			
+160	+				if (ComputerChoice == 1)
+161	+					{
+162	+						if (  Box1.equals("1"))
+163	+							{
+164	+								Box1="O";
+165	+							}
+166	+						else 
+167	+							{
+168	+								continue;
+169	+							}
+170	+					}
+171	+					else if (ComputerChoice == 2)
+172	+					{
+173	+						if ( Box1.equals("2"))
+174	+							{
+175	+								Box2="O";
+176	+							}
+177	+						else 
+178	+							{
+179	+								continue;
+180	+							}
+181	+					}
+182	+					else if (ComputerChoice == 3)
+183	+					{
+184	+						if ( ! Box1.equals("3"))
+185	+							{
+186	+								Box3="O";
+187	+							}
+188	+						else 
+189	+							{
+190	+								continue;
+191	+							}
+192	+					}
+193	+					else if (ComputerChoice == 4)
+194	+					{
+195	+						if ( ! Box1.equals("4"))
+196	+							{
+197	+								Box5="O";
+198	+							}
+199	+						else 
+200	+							{
+201	+								continue;
+202	+							}
+203	+					}
+204	+					else if (ComputerChoice == 5)
+205	+					{
+206	+						if ( ! Box1.equals("5"))
+207	+							{
+208	+								Box5="O";
+209	+							}
+210	+						else 
+211	+							{
+212	+								continue;
+213	+							}	
+214	+					}
+215	+					else if (ComputerChoice == 6)
+216	+					{
+217	+						if ( ! Box1.equals("6"))
+218	+							{
+219	+								Box6="O";
+220	+							}
+221	+						else 
+222	+							{
+223	+								continue;
+224	+							}
+225	+					}
+226	+					else if (ComputerChoice == 7)
+227	+					{
+228	+						if ( ! Box1.equals("7"))
+229	+							{
+230	+								Box7="O";
+231	+							}
+232	+						else 
+233	+							{
+234	+								continue;
+235	+							}
+236	+					}	
+237	+					else if (ComputerChoice == 7)
+238	+					{
+239	+						if ( ! Box1.equals("7"))
+240	+							{
+241	+								Box8="O";
+242	+							}
+243	+						else 
+244	+							{
+245	+								continue;
+246	+							}	
+247	+					}				
+248	+					else if (ComputerChoice == 8)
+249	+						{
+250	+							if ( ! Box1.equals("8"))
+251	+								{
+252	+									Box8="O";
+253	+								}
+254	+							else 
+255	+							{
+256	+								continue;
+257	+							}
+258	+						}	
+259	+					else if (ComputerChoice == 9)
+260	+					{
+261	+						if ( ! Box1.equals("9"))
+262	+							{
+263	+								Box9="O";
+264	+							}
+265	+						else 
+266	+							{
+267	+								continue;
+268	+							}
+269	+					}
+270	+				break;
+271	+				GameTie++;
+272	+		}while(true);
+273	+			
+274	+			{
+275	+				// Player X //
+276	+				if ((Box1.equals("X")) && (Box2.equals("X")) && (Box3.equals("X")))
+277	+					{
+278	+						JOptionPane.showMessageDialog(null,"You win");
+279	+						GameDone = false;
+280	+					}
+281	+				if ((Box4.equals("X")) && (Box5.equals("X")) && (Box6.equals("X")))
+282	+					{
+283	+						JOptionPane.showMessageDialog(null,"You win");
+284	+						GameDone = false;
+285	+					}
+286	+				if ((Box7.equals("X")) && (Box8.equals("X")) && (Box9.equals("X")))
+287	+					{
+288	+						JOptionPane.showMessageDialog(null,"You win");
+289	+						GameDone = false;
+290	+					}
+291	+				if ((Box1.equals("X")) && (Box4.equals("X")) && (Box7.equals("X")))
+292	+					{
+293	+						JOptionPane.showMessageDialog(null,"You win");
+294	+						GameDone = false;
+295	+					}
+296	+				if ((Box2.equals("X")) && (Box5.equals("X")) && (Box8.equals("X")))
+297	+					{
+298	+						JOptionPane.showMessageDialog(null,"You win");
+299	+						GameDone = false;
+300	+					}
+301	+				if ((Box3.equals("X")) && (Box6.equals("X")) && (Box9.equals("X")))
+302	+					{
+303	+						JOptionPane.showMessageDialog(null,"You win");
+304	+						GameDone = false;
+305	+					}
+306	+				if ((Box1.equals("X")) && (Box5.equals("X")) && (Box9.equals("X")))
+307	+					{
+308	+						JOptionPane.showMessageDialog(null,"You win");
+309	+						GameDone = false;
+310	+					}
+311	+				if ((Box3.equals("X")) && (Box5.equals("X")) && (Box7.equals("X")))
+312	+					{
+313	+						JOptionPane.showMessageDialog(null,"You win");
+314	+						GameDone = false;
+315	+					}
+316	+				// Player O //
+317	+				if ((Box1.equals("O")) && (Box2.equals("O")) && (Box3.equals("O")))
+318	+					{
+319	+						JOptionPane.showMessageDialog(null,"Computer Wins");
+320	+						GameDone = false;
+321	+					}
+322	+				if ((Box4.equals("O")) && (Box5.equals("O")) && (Box6.equals("O")))
+323	+					{
+324	+						JOptionPane.showMessageDialog(null,"Computer Wins");
+325	+						GameDone = false;
+326	+					}
+327	+				if ((Box7.equals("O")) && (Box8.equals("O")) && (Box9.equals("O")))
+328	+					{
+329	+						JOptionPane.showMessageDialog(null,"Computer Wins");
+330	+						GameDone = false;
+331	+					}
+332	+				if ((Box1.equals("O")) && (Box4.equals("O")) && (Box7.equals("O")))
+333	+					{
+334	+						JOptionPane.showMessageDialog(null,"Computer Wins");
+335	+						GameDone = false;
+336	+					}
+337	+				if ((Box2.equals("O")) && (Box5.equals("O")) && (Box8.equals("O")))
+338	+					{
+339	+						JOptionPane.showMessageDialog(null,"Computer Wins");
+340	+						GameDone = false;
+341	+					}
+342	+				if ((Box3.equals("O")) && (Box6.equals("O")) && (Box9.equals("O")))
+343	+					{
+344	+						JOptionPane.showMessageDialog(null,"Computer Wins");
+345	+						GameDone = false;
+346	+					}
+347	+				if ((Box1.equals("O")) && (Box5.equals("O")) && (Box9.equals("O")))
+348	+					{
+349	+						JOptionPane.showMessageDialog(null,"Computer Wins");
+350	+						GameDone = false;
+351	+					}
+352	+				if ((Box3.equals("O")) && (Box5.equals("O")) && (Box7.equals("O")))
+353	+					{
+354	+						JOptionPane.showMessageDialog(null,"Computer Wins");
+355	+						GameDone = false;
+356	+					}
+357	+				if (GameTie == 9)
+358	+					{
+359	+						JOptionPane.showMessageDialog(null,"Game Tie");
+360	+						GameDone = false;
+361	+					}
+362	+			}
+363	+	}while (GameDone);
+364	+			
+365	+	}
+366	+}
